@@ -10,7 +10,8 @@ Configuramos los hosts
 		"alias" ansible_ssh_host="Server - IP"
 		
 Creamos el archivo yml 
----
+
+
 - name: Instalar MySQL
   hosts: Master
   vars: 
