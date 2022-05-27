@@ -12,33 +12,33 @@ Configuramos los hosts
 Creamos el archivo yml 
 
 
-- name: Instalar MySQL
-  hosts: Master
-  vars: 
-    mysql_root_password: Montechelo2022*
-  become: yes
-  tasks:
-      - name: Instalar wget
-        yum: name=wget state=installed
+	- name: Instalar MySQL
+	  hosts: Master
+	  vars: 
+	    mysql_root_password: Montechelo2022*
+	  become: yes
+	  tasks:
+	      - name: Instalar wget
+		yum: name=wget state=installed
 
-      - name: Instalar Python
-        yum: name=MySQL-python state=installed
+	      - name: Instalar Python
+		yum: name=MySQL-python state=installed
 
-      - name: Instalar llaves
-        get_url: url=https://repo.mysql.com/RPM-GPG-KEY-mysql dest=/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+	      - name: Instalar llaves
+		get_url: url=https://repo.mysql.com/RPM-GPG-KEY-mysql dest=/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
 
-      - name: Descargar libreria MySQL
-        get_url: 
-          url: https://repo.mysql.com/mysql80-community-release-el7-6.noarch.rpm 
-          dest: /usr/mysql/mysql80-community-release-el7-6.noarch.rpm
+	      - name: Descargar libreria MySQL
+		get_url: 
+		  url: https://repo.mysql.com/mysql80-community-release-el7-6.noarch.rpm 
+		  dest: /usr/mysql/mysql80-community-release-el7-6.noarch.rpm
 
-      - name: Instalar el rpm
-        yum: 
-          name: /usr/mysql/mysql80-community-release-el7-6.noarch.rpm 
-          state: present
+	      - name: Instalar el rpm
+		yum: 
+		  name: /usr/mysql/mysql80-community-release-el7-6.noarch.rpm 
+		  state: present
 
-      - name: Instalar MySQL
-        yum: name=mysql-server state=installed
+	      - name: Instalar MySQL
+		yum: name=mysql-server state=installed
 				
 Nos saldra un error por configuracion de usuario
 - Ingresamos a nuestra VM por medio de ssh
