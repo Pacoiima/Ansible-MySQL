@@ -2,12 +2,12 @@
 Instalar Mysql por medio de ansible
 
 Como primer paso instalamos Ansible
-- sudo yum install ansible
+	- sudo yum install ansible
 
 Configuramos los hosts
-- sudo vi /etc/ansible/hosts
-		[server]
-		"alias" ansible_ssh_host="Server - IP"
+	- sudo vi /etc/ansible/hosts
+			[server]
+			"alias" ansible_ssh_host="Server - IP"
 		
 Creamos el archivo yml 
 
